@@ -11,6 +11,9 @@ import com.example.admin_zakat.databinding.ActivityDetailTransferBinding
 import com.example.admin_zakat.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
+import java.text.NumberFormat
+import java.util.Locale
+import java.util.StringTokenizer
 
 
 class Detail_Transfer : AppCompatActivity() {
@@ -22,7 +25,7 @@ class Detail_Transfer : AppCompatActivity() {
         setContentView(binding.root)
         val param = intent.getParcelableExtra<DaftarTransfer>("transfer") as DaftarTransfer
         binding.tvNama.text = param.nama_pembayar
-        binding.tvJumlah.text = param.total_pembayaran
+        binding.tvJumlah.text = token(currency(param.total_pembayaran.toInt()))
 
         Glide.with(this@Detail_Transfer)
             .load("https://indrasela.net/mobile_zakat/foto/${param.foto}")
@@ -64,5 +67,15 @@ class Detail_Transfer : AppCompatActivity() {
                 }
             })
         }
+    }
+    private fun currency(data:Int):String{
+        val locale = Locale("IND", "ID")
+        val formatter = NumberFormat.getCurrencyInstance(locale)
+        return formatter.format(data)
+    }
+
+    private fun token(data: String): String {
+        val tokenizer = StringTokenizer(data, ",")
+        return tokenizer.nextToken()
     }
 }

@@ -6,12 +6,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.admin_zakat.adapter.ValidateTrsanferAdapater
-import com.example.admin_zakat.data.DaftarTransfer
 import com.example.admin_zakat.data.DataTransfer
 import com.example.admin_zakat.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.NumberFormat
+import java.util.Locale
 
 class daftar_transfer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +39,9 @@ class daftar_transfer : AppCompatActivity() {
             }
             override fun onFailure(call: Call<DataTransfer>, t: Throwable) {
                 Toast.makeText(this@daftar_transfer,t.message,Toast.LENGTH_SHORT).show()
-
-
             }
         })
 
     }
+
 }
