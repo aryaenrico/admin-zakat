@@ -37,6 +37,7 @@ class daftar_transfer : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<DataTransfer>, t: Throwable) {
+                Toast.makeText(this@daftar_transfer,t.message,Toast.LENGTH_SHORT).show()
 
 
             }
