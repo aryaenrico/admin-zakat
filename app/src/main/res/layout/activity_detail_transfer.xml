@@ -1,72 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     android:padding="16dp">
 
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:text="Detail Zakat"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Nama Pembayar"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_nama"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="username"
-        android:drawablePadding="12dp"
-        android:padding="16dp"
-        android:textSize="14sp"
-        android:text="contoh"/>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Detail Zakat"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Total"
-        android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Nama Pembayar"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/tv_jumlah"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="12dp"
-        android:inputType="number"
-        android:text="contoh"
-        android:padding="16dp"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="username"
+            android:background="@drawable/bg_textfield"
+            android:drawablePadding="12dp"
+            android:padding="16dp"
+            android:text="contoh"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Total"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_jumlah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_textfield"
+            android:drawablePadding="12dp"
+            android:inputType="number"
+            android:padding="16dp"
+            android:text="contoh"
+            android:textSize="14sp" />
 
 
-    <ImageView
-        android:id="@+id/gambar"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginTop="12dp"
-        android:scaleType="centerCrop"
-        />
+        <ImageView
+            android:id="@+id/gambar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btProses"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:letterSpacing="0.2"
-        android:textStyle="normal"
-        android:text="Proses" />
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btProses"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.2"
+            android:text="Proses"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+
+</ScrollView>
