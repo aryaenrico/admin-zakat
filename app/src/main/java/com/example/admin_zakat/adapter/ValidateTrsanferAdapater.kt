@@ -31,6 +31,7 @@ class ValidateTrsanferAdapater (private val listData: ArrayList<DaftarTransfer>)
             .into(holder.imgPhoto)
         holder.tvName.text = listData[position].nama_pembayar
         holder.tvTotal.text = token(currency(listData[position].total_pembayaran.toInt()))
+        holder.tvTipeZakat.text ="Jenis Zakat: "+listData[position].tipe_zakat
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context,Detail_Transfer::class.java)
             intent.putExtra("transfer",listData[position])
@@ -56,5 +57,6 @@ class ValidateTrsanferAdapater (private val listData: ArrayList<DaftarTransfer>)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvTotal: TextView = itemView.findViewById(R.id.tv_total_transfer)
+        var tvTipeZakat: TextView = itemView.findViewById(R.id.tipe_zakat)
     }
 }

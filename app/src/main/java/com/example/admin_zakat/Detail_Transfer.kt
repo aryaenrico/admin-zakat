@@ -35,7 +35,7 @@ class Detail_Transfer : AppCompatActivity() {
             val client = ApiConfig.getApiService().processSetoran(
                 param.id_pembayaran,
                 param.id_pembayar,
-                param.kode_pembayaran,
+                param.tipe_zakat,
                 param.tgl_penyerahan,
                 param.pembayaran_uang,
                 param.jumlah_tanggungan,

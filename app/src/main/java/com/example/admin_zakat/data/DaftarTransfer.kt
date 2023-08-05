@@ -12,8 +12,8 @@ data class DaftarTransfer(
     val id_pembayar:Int,
     @field:SerializedName("nama_pembayar")
     val nama_pembayar:String,
-    @field:SerializedName("kode_pembayaran")
-    val kode_pembayaran:String,
+    @field:SerializedName("tipe_zakat")
+    val tipe_zakat:String,
     @field:SerializedName("tgl_penyerahan")
     val tgl_penyerahan:String,
     @field:SerializedName("pembayaran_uang")
