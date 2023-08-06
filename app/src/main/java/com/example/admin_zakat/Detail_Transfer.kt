@@ -2,6 +2,7 @@ package com.example.admin_zakat
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -60,6 +61,36 @@ class Detail_Transfer : AppCompatActivity() {
                     } else {
 
                     }
+                }
+                override fun onFailure(call: Call<Response>, t: Throwable) {
+                    Toast.makeText(this@Detail_Transfer,t.message,Toast.LENGTH_SHORT).show()
+
+                }
+            })
+        }
+
+        binding.btnReject.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
+            val client =ApiConfig.getApiService().reject(param.id_pembayaran)
+            client.enqueue(object : Callback<Response> {
+                override fun onResponse(
+                    call: Call<Response>,
+                    response: retrofit2.Response<Response>
+                ) {
+
+                    val responseBody = response.body()
+                    if (response.isSuccessful && responseBody != null) {
+                        if (responseBody.status =="sukses"){
+                            Toast.makeText(this@Detail_Transfer,"data berhasil diproses",Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@Detail_Transfer, daftar_transfer::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                            finish()
+                        }
+                    } else {
+
+                    }
+                    binding.progressBar.visibility = View.GONE
                 }
                 override fun onFailure(call: Call<Response>, t: Throwable) {
                     Toast.makeText(this@Detail_Transfer,t.message,Toast.LENGTH_SHORT).show()

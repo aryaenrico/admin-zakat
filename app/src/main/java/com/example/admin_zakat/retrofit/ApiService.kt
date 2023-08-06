@@ -21,4 +21,8 @@ interface ApiService {
                        @Field("jumlah_tanggungan") jumlah_tanggugan: Int,
                        @Field("total_pembayaran") total_pembayaran: String,
                        @Field("foto") foto: String):Call<Response>
+
+    @FormUrlEncoded
+    @POST("reject.php")
+    fun reject(@Field("id") id_transaksi:Int):Call<Response>
 }

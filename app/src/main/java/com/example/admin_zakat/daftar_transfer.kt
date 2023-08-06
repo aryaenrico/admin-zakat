@@ -31,8 +31,6 @@ class daftar_transfer : AppCompatActivity() {
                     val rvHeroes = findViewById<RecyclerView>(R.id.rv_daftar_transfer)
                     rvHeroes.layoutManager = LinearLayoutManager(this@daftar_transfer)
                     rvHeroes.adapter = ValidateTrsanferAdapater(responseBody.data)
-                    //Toast.makeText(this@daftar_transfer,responseBody.data[0].foto,Toast.LENGTH_SHORT).show()
-
                 } else {
 
                 }
