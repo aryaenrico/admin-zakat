@@ -33,15 +33,24 @@ class Detail_Transfer : AppCompatActivity() {
             .into(binding.gambar)
 
         binding.btProses.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
+            var data:Int=0
+           when(param.tipe_zakat){
+               "mal"-> data =1
+               "fidyah"->data=2
+               "fitrah"->data=3
+           }
+
             val client = ApiConfig.getApiService().processSetoran(
                 param.id_pembayaran,
                 param.id_pembayar,
-                param.tipe_zakat,
                 param.tgl_penyerahan,
                 param.pembayaran_uang,
                 param.jumlah_tanggungan,
                 param.total_pembayaran,
-                param.foto
+                param.foto,
+                data
+
             )
 
             client.enqueue(object : Callback<Response> {
@@ -61,6 +70,7 @@ class Detail_Transfer : AppCompatActivity() {
                     } else {
 
                     }
+                    binding.progressBar.visibility = View.GONE
                 }
                 override fun onFailure(call: Call<Response>, t: Throwable) {
                     Toast.makeText(this@Detail_Transfer,t.message,Toast.LENGTH_SHORT).show()

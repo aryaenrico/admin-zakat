@@ -15,12 +15,13 @@ interface ApiService {
     @POST("process_transfer.php")
     fun processSetoran(@Field("id_pembayaran") id_pembayaran: Int,
                        @Field("id_pembayar") id_pembayar: Int,
-                       @Field("kode_pembayaran") kode_pembayaran: String,
                        @Field("tgl_penyerahan") tgl_penyerahan: String,
                        @Field("pembayaran_uang") pembayaran_uang: Int,
                        @Field("jumlah_tanggungan") jumlah_tanggugan: Int,
                        @Field("total_pembayaran") total_pembayaran: String,
-                       @Field("foto") foto: String):Call<Response>
+                       @Field("foto") foto: String,
+                       @Field("jenis_zakat") jenis_zakat:Int
+    ):Call<Response>
 
     @FormUrlEncoded
     @POST("reject.php")
