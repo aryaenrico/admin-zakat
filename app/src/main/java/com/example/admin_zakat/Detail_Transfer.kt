@@ -40,6 +40,14 @@ class Detail_Transfer : AppCompatActivity() {
                "fidyah"->data=2
                "fitrah"->data=3
            }
+            var dataSumbangan:Int=0;
+            var temp = param?.jenis_sumbangan ?: "kosong";
+            var totalSumbangan = param?.total_sumbangan ?: 0;
+            when(temp){
+                "infak"->dataSumbangan =4
+                "sedekah"->dataSumbangan=5
+                "kosong"->dataSumbangan =0;
+            }
 
             val client = ApiConfig.getApiService().processSetoran(
                 param.id_pembayaran,
@@ -49,7 +57,9 @@ class Detail_Transfer : AppCompatActivity() {
                 param.jumlah_tanggungan,
                 param.total_pembayaran,
                 param.foto,
-                data
+                data,
+                dataSumbangan ,
+               totalSumbangan
 
             )
 
@@ -98,7 +108,7 @@ class Detail_Transfer : AppCompatActivity() {
                             finish()
                         }
                     } else {
-
+                        Toast.makeText(this@Detail_Transfer,responseBody?.message,Toast.LENGTH_SHORT).show()
                     }
                     binding.progressBar.visibility = View.GONE
                 }

@@ -20,7 +20,9 @@ interface ApiService {
                        @Field("jumlah_tanggungan") jumlah_tanggugan: Int,
                        @Field("total_pembayaran") total_pembayaran: String,
                        @Field("foto") foto: String,
-                       @Field("jenis_zakat") jenis_zakat:Int
+                       @Field("jenis_zakat") jenis_zakat:Int,
+                       @Field("jenis_sumbangan") jenis_sumbangan:Int,
+                       @Field("total_sumbangan") total_sumbangan:Int
     ):Call<Response>
 
     @FormUrlEncoded

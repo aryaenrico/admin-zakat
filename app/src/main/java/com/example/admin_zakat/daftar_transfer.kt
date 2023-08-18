@@ -25,7 +25,6 @@ class daftar_transfer : AppCompatActivity() {
                 call: Call<DataTransfer>,
                 response: Response<DataTransfer>
             ) {
-
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     val rvHeroes = findViewById<RecyclerView>(R.id.rv_daftar_transfer)

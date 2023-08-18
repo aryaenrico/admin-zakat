@@ -23,7 +23,11 @@ data class DaftarTransfer(
     @field:SerializedName("total_pembayaran")
     val total_pembayaran:String,
     @field:SerializedName("foto")
-    val foto:String
+    val foto:String,
+    @field:SerializedName("jenis_sumbangan")
+    val jenis_sumbangan:String?,
+    @field:SerializedName("total_sumbangan")
+    val total_sumbangan:Int?
     ):Parcelable
 
 data class DataTransfer(
